@@ -1,6 +1,7 @@
-import Node from "./Node.js";
+import List from "./List.js";
 
-const newNode = new Node("dejan");
+const list = new List();
 
-console.log(newNode.value);
-console.log(newNode.next);
+list.append("dejan");
+list.append("kasper");
+list.append("sergo");
