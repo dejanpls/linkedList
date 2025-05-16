@@ -15,7 +15,6 @@ export default class List {
 
     while (current.next !== null) current = current.next;
     current.next = node;
-    console.log(this.head);
   }
 
   prepend(value) {
@@ -23,5 +22,17 @@ export default class List {
 
     node.next = this.head;
     this.head = node;
+  }
+
+  size() {
+    if (this.head === null) return 0;
+
+    let size = 1;
+    let current = this.head;
+    while (current.next !== null) {
+      current = current.next;
+      size++;
+    }
+    return size;
   }
 }
