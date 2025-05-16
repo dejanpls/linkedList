@@ -44,9 +44,21 @@ export default class List {
     if (this.#head === null) return this.#head;
 
     let tail = this.#head;
-    while (tail.next !== null) {
-      tail = tail.next;
-    }
+    while (tail.next !== null) tail = tail.next;
     return tail;
+  }
+
+  at(index) {
+    if (this.#head === null) return this.#head;
+
+    let count = 0;
+    let current = this.#head;
+
+    while (current !== null && count !== index) {
+      current = current.next;
+      count++;
+    }
+
+    return current;
   }
 }
