@@ -5,6 +5,7 @@ export default class List {
 
   append(value) {
     const node = new Node(value);
+
     if (this.head === null) {
       this.head = node;
       return;
@@ -14,5 +15,13 @@ export default class List {
 
     while (current.next !== null) current = current.next;
     current.next = node;
+    console.log(this.head);
+  }
+
+  prepend(value) {
+    const node = new Node(value);
+
+    node.next = this.head;
+    this.head = node;
   }
 }
