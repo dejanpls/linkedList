@@ -91,4 +91,17 @@ export default class List {
 
     return false;
   }
+
+  find(value) {
+    let current = this.#head;
+    let size = 0;
+
+    while (current !== null) {
+      if (current.value.toLowerCase() === value.toLowerCase()) return size;
+      current = current.next;
+      size++;
+    }
+
+    return null;
+  }
 }
