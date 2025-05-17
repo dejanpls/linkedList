@@ -104,4 +104,16 @@ export default class List {
 
     return null;
   }
+
+  get toString() {
+    let current = this.#head;
+    let string = "";
+
+    while (current !== null) {
+      string += `( ${current.value} ) -> `;
+      current = current.next;
+    }
+
+    return string + "null";
+  }
 }
