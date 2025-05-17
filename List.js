@@ -118,7 +118,7 @@ export default class List {
   }
 
   insertAt(value, index) {
-    if (index < 0 || index > this.size) return null;
+    if (index < 0 || index >= this.size) return null;
 
     if (index === 0) {
       this.prepend(value);
@@ -133,5 +133,21 @@ export default class List {
 
     node.next = current;
     previous.next = node;
+  }
+
+  removeAt(index) {
+    if (index < 0 || index >= this.size) return null;
+
+    if (index === 0) {
+      this.#head = this.#head.next;
+      return;
+    }
+
+    let previous = this.at(index - 1);
+    if (this.#head === null || !previous) return null;
+
+    let current = this.at(index);
+
+    previous.next = current.next;
   }
 }
