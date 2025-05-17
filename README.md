@@ -1,31 +1,91 @@
-# Linked List
+# 📚 Linked List Implementation (JavaScript)
 
-### From a TOP JavaScript Course
+> Built as part of The Odin Project JavaScript curriculum.
 
-A linked list is a linear collection of data elements called nodes that “point” to the next node by means of a pointer.
+A **Linked List** is a linear data structure consisting of **nodes**, where each node contains a value and a reference (or pointer) to the next node in the sequence.
 
-Each node holds a single element of data and a link or pointer to the next node in the list.
+Unlike arrays, linked lists don’t store elements in contiguous memory locations, making them great for dynamic data management — especially when frequent insertions or deletions are involved.
 
-A head node is the first node in the list, a tail node is the last node in the list. Below is a basic representation of a linked list:
+---
+
+## 📌 Structure of a Linked List
+
+Each node has:
+
+- A `value`: The actual data.
+- A `next` pointer: A reference to the next node (or `null` if it’s the end).
+
+### Visual Representation:
 
 ```
-[ NODE(head) ] -> [ NODE ] -> [ NODE(tail) ] -> null
+[ NODE (head) ] -> [ NODE ] -> [ NODE (tail) ] -> null
 ```
 
-The following functions are in the linked list class:
+---
 
-- append(value) adds a new node containing value to the end of the list
-- prepend(value) adds a new node containing value to the start of the list
-- size returns the total number of nodes in the list
-- head returns the first node in the list
-- tail returns the last node in the list
-- at(index) returns the node at the given index
-- pop removes the last element from the list
-- contains(value) returns true if the passed in value is in the list and otherwise returns false.
-- find(value) returns the index of the node containing value, or null if not found.
-- toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+## 🛠️ Available Methods
 
-### Extra credit
+Here’s a list of methods available on the `LinkedList` class:
 
-- insertAt(value, index) that inserts a new node with the provided value at the given index.
-- removeAt(index) that removes the node at the given index.
+### 🔹 Core Features
+
+- **append(value)**
+  Adds a node with the given value to the **end** of the list.
+
+- **prepend(value)**
+  Adds a node with the given value to the **start** of the list.
+
+- **size**
+  Returns the **number of nodes** in the list.
+
+- **head**
+  Returns the **first node** in the list.
+
+- **tail**
+  Returns the **last node** in the list.
+
+- **at(index)**
+  Returns the **node at the specified index** (0-based). Returns `null` if out of bounds.
+
+- **pop()**
+  Removes the **last node** from the list.
+
+- **contains(value)**
+  Returns `true` if the list contains the given value, otherwise `false`.
+
+- **find(value)**
+  Returns the **index** of the node containing the value, or `null` if not found.
+
+- **toString**
+  Converts the list into a readable string format:
+
+  ```
+  ( value ) -> ( value ) -> ( value ) -> null
+  ```
+
+---
+
+## ⭐ Extra Credit Features
+
+- **insertAt(value, index)**
+  Inserts a new node with the given value **at the specified index**.
+
+- **removeAt(index)**
+  Removes the node at the specified index.
+
+---
+
+## 🧠 Why Use Linked Lists?
+
+- Efficient insertions/removals (especially at the beginning/middle)
+- No need to preallocate space
+- Great for implementing stacks, queues, and complex graph-based data structures
+
+---
+
+## 📎 Notes
+
+- All methods assume zero-based indexing.
+- Edge cases (like empty lists, invalid indices, etc.) are handled gracefully.
+
+---
