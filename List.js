@@ -61,4 +61,23 @@ export default class List {
 
     return current;
   }
+
+  pop() {
+    let tail = this.tail;
+    let current = this.#head;
+
+    if (current === null) return null;
+    if (current.next === null) {
+      this.#head = null;
+      return tail;
+    }
+
+    while (current.next !== null && current.next !== tail) {
+      current = current.next;
+    }
+
+    current.next = null;
+
+    return tail;
+  }
 }
