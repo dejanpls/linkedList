@@ -80,4 +80,15 @@ export default class List {
 
     return tail;
   }
+
+  contains(value) {
+    let current = this.#head;
+
+    while (current !== null) {
+      if (current.value.toLowerCase() === value.toLowerCase()) return true;
+      current = current.next;
+    }
+
+    return false;
+  }
 }
